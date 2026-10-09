@@ -1,10 +1,14 @@
 """
+Sigmoid and its derivative are completely new to me, therefore i have used claude code more than i would like to...
+
 C1. Sigmoid function and its derivative.
 
 sigma(x)  = 1 / (1 + exp(-x))
 sigma'(x) = sigma(x) * (1 - sigma(x))   <- this identity is worth memorizing,
                                             it's why sigmoid is so convenient in ML
 """
+from pathlib import Path
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -30,5 +34,5 @@ plt.ylabel("y")
 plt.title("Sigmoid and its derivative")
 plt.legend()
 plt.tight_layout()
-plt.savefig("c1_sigmoid.png", dpi=150)
+plt.savefig(Path(__file__).parent / "c1_sigmoid.png", dpi=150)
 plt.show()

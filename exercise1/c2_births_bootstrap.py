@@ -9,10 +9,12 @@ resample matches the original data. Repeat 2000 times to build up a
 distribution of Delta, then read off the 2.5th and 97.5th percentiles
 for a 95% CI.
 """
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv("births.csv")
+df = pd.read_csv(Path(__file__).parent / "births.csv")
 
 # Column names in the file use dots, e.g. "Maternal.Smoker" / "Birth.Weight"
 smoker_col = "Maternal.Smoker"
